@@ -1,12 +1,14 @@
 package com.calculator.currency.dto;
 
 import com.calculator.currency.domain.Country;
+import java.text.DecimalFormat;
 
 public class CountryResponse {
     private final Long id;
     private final String countryName;
     private final String currencyCode;
     private final double currency;
+    private static final String currencyFormat = "###,###.00";
 
     public static CountryResponse of(final Country country) {
         return new CountryResponse(country.getId(), country.getCountryName(), country.getCurrencyCode(), country.getCurrency());
@@ -31,7 +33,8 @@ public class CountryResponse {
         return currencyCode;
     }
 
-    public double getCurrency() {
-        return currency;
+    public String getCurrency() {
+        DecimalFormat decimalFormat = new DecimalFormat(currencyFormat);
+        return decimalFormat.format(currency);
     }
 }
