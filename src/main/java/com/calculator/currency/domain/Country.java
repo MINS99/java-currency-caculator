@@ -39,4 +39,8 @@ public class Country {
     public double getCurrency() {
         return currency;
     }
+
+    public void updateCurrency(double currency) {
+        this.currency = currency;
+    }
 }
