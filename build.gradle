@@ -21,6 +21,9 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+	/* JSONParser, JSONObject */
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 }
 
 tasks.named('test') {
